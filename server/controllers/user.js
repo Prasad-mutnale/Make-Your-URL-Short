@@ -6,9 +6,9 @@ const handleUserSignup = async (req,res)=>{
     const {name,email,password} = req.body;
 
     const userExist = await User.find({email:email})
-    // console.log(userExist)
+    console.log("User data",userExist)
 
-    if(!userExist){
+    if(userExist.length === 0){
 
     await User.create({
         name,

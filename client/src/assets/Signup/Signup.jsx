@@ -44,8 +44,10 @@ const Signup = () => {
                 } 
             })
             .catch(error=>{
-                console.log("Error===>",error.response.data.status)
-                if(error.response.status!== 201 )
+              console.log("Error===>",error.response)
+
+              console.log("Error===>",error.response.data.status)
+              if(error.response.status!== 201 )
                 {
                   alert("User is already exist")
                 } 
