@@ -53,8 +53,12 @@ connectToMongoDB(uri)
 
 
 const corsOptions = {
-    origin: /\.onrender\.com$/,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",};
+    // origin: /\.onrender\.com$/,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",},
+    headers: {
+        "Access-Control-Allow-Origin": "http://localhost:5173/", // incorrect
+        // "Access-Control-Allow-Credentials": true // incorrect
+    },
   app.use(cors(corsOptions));
 
 app.use(express.json())
