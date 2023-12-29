@@ -56,7 +56,10 @@ const corsOptions = {
     // origin: /\.onrender\.com$/,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     headers:{
-        "Access-Control-Allow-Origin": "http://localhost:5173/", // incorrect
+        // "Access-Control-Allow-Origin": "http://localhost:5173/", // incorrect
+        "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
         // "Access-Control-Allow-Credentials": true // incorrect
     }
 }
