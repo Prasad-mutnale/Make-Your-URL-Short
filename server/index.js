@@ -69,7 +69,7 @@ connectToMongoDB(uri)
 app.use(cors({
     origin: "*",
     headers: ["Content-Type"],
-    credentials: true,
+    // credentials: true,
 }));
 
 app.use(express.json())
