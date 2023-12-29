@@ -32,7 +32,11 @@ const Home = () => {
 
     const fetchData = async()=>{
         try{
-            const resp = await axios.get('https://url-backend-mgn8.onrender.com/url/getlinks')
+            const resp = await axios.get('https://url-backend-mgn8.onrender.com/url/getlinks',{
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'true' // incorrect
+                }})
             .then((re)=>{
                 console.log("data responsed", re)
                 setallUrl(re.data.result);

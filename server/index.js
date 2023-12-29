@@ -52,19 +52,25 @@ connectToMongoDB(uri)
 .catch((err)=>console.log("Not connected to db",err))
 
 
-const corsOptions = {
-    // origin: /\.onrender\.com$/,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    headers:{
-        // "Access-Control-Allow-Origin": "http://localhost:5173/", // incorrect
-        "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": "true",
-      "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-        // "Access-Control-Allow-Credentials": true // incorrect
-    }
-}
+// const corsOptions = {
+//     // origin: /\.onrender\.com$/,
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     headers:{
+//         // "Access-Control-Allow-Origin": "http://localhost:5173/", // incorrect
+//         "Access-Control-Allow-Origin": "*",
+//       "Access-Control-Allow-Credentials": "true",
+//       "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+//         // "Access-Control-Allow-Credentials": true // incorrect
+//     }
+// }
 
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
+
+app.use(cors({
+    origin: "*",
+    headers: ["Content-Type"],
+    credentials: true,
+}));
 
 app.use(express.json())
 
