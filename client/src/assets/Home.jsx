@@ -13,7 +13,7 @@ const Home = () => {
     const handlesubmit = async  (e) =>{
         e.preventDefault()
         if(originalurl){
-        const result = await axios.post("http://localhost:8001/url",{"url":originalurl})
+        const result = await axios.post("https://url-backend-mgn8.onrender.com/url",{"url":originalurl})
         .then((res)=>{
             console.log("result===>", res) 
             fetchData();
@@ -32,7 +32,7 @@ const Home = () => {
 
     const fetchData = async()=>{
         try{
-            const resp = await axios.get('http://localhost:8001/url/getlinks')
+            const resp = await axios.get('https://url-backend-mgn8.onrender.com/url/getlinks')
             .then((re)=>{
                 console.log("data responsed", re)
                 setallUrl(re.data.result);
@@ -85,7 +85,7 @@ const Home = () => {
             return(
                 <tr key={index}>
                     <td>{index+1}</td>
-                    <td><Link onClick={(e)=>{ e.preventDefault(); const newTab = window.open(`http://localhost:8001/url/${item.shortId}`, '_blank');  setTimeout(()=>{ window.location.reload(true); } ,5000);}}  >{item.shortId}</Link></td>
+                    <td><Link onClick={(e)=>{ e.preventDefault(); const newTab = window.open(`https://url-backend-mgn8.onrender.com/url/${item.shortId}`, '_blank');  setTimeout(()=>{ window.location.reload(true); } ,5000);}}  >{item.shortId}</Link></td>
                     <td> {item.redirectURL}</td>
                     <td> {item.visitHistory.length}</td>
                 </tr>

@@ -33,7 +33,7 @@ const Signup = () => {
         if(setData.username!= "" && setData.email!= "" && setData.password!= "")
         {
           const result = await axios.post(
-            'http://localhost:8001/user/',
+            'https://url-backend-mgn8.onrender.com/user/',
             {   name:setData.username,password:setData.password,email:setData.email},
             ).then(response=>{
                 console.log("Success===>",response.status)

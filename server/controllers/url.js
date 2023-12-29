@@ -35,7 +35,9 @@ async function getURL(req, res) {
         }
     );
 
+    console.log(entry.redirectURL)
     return res.redirect(entry.redirectURL)
+    // return res.send("Updated data ")
 
 }
 

@@ -52,7 +52,11 @@ connectToMongoDB(uri)
 .catch((err)=>console.log("Not connected to db",err))
 
 
-app.use(cors())
+const corsOptions = {
+    origin: /\.onrender\.com$/,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",};
+  app.use(cors(corsOptions));
+
 app.use(express.json())
 
 app.use("/url", urlRoute)
